@@ -5,11 +5,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_x926b.mk
+LOCAL_PATH := $(call my-dir)
 
-COMMON_LUNCH_CHOICES := \
-    twrp_x926b-eng \
-    twrp_x926b-userdebug \
-    twrp_x926b-user
-    
+ifeq ($(TARGET_DEVICE),x926b)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+endif

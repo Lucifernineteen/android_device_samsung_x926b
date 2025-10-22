@@ -1,0 +1,30 @@
+# mount point   fstype  device                              device2                 flags
+
+/boot           emmc    /dev/block/by-name/boot                                     flags=backup=1;flashimg=1;display="Boot"
+/recovery       emmc    /dev/block/by-name/recovery                                 flags=backup=1;flashimg=1;display="Recovery"
+/init_boot      emmc    /dev/block/by-name/init_boot                                flags=backup=1;flashimg=1;display="Init Boot"
+
+# Dynamic Partitions
+/system         ext4    /dev/block/mapper/system                                    flags=backup=1;display="System";logical
+/vendor         ext4    /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor";logical
+/product        ext4    /dev/block/mapper/product                                   flags=backup=1;display="Product";logical
+/odm            ext4    /dev/block/mapper/odm                                       flags=backup=1;display="ODM";logical
+
+# Data
+/data           f2fs    /dev/block/by-name/userdata                                 flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0
+/cache          ext4    /dev/block/by-name/cache                                    flags=backup=1;wipeingui;wipeduringfactoryreset
+/metadata       ext4    /dev/block/by-name/metadata                                 flags=backup=1;display="Metadata"
+
+# Samsung Partitions
+/efs            ext4    /dev/block/by-name/efs                                      flags=backup=1;display="EFS"
+/sec_efs        ext4    /dev/block/by-name/sec_efs                                  flags=backup=1;display="Sec EFS"
+/persist        ext4    /dev/block/by-name/persist                                  flags=backup=1;display="Persist"
+
+# Firmware
+/dtbo           emmc    /dev/block/by-name/dtbo                                     flags=backup=1;flashimg=1;display="DTBO"
+/vbmeta         emmc    /dev/block/by-name/vbmeta                                   flags=backup=1;flashimg=1;display="VBMeta"
+/vbmeta_system  emmc    /dev/block/by-name/vbmeta_system                            flags=backup=1;flashimg=1;display="VBMeta System"
+
+# Storage
+/external_sd    vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1                  flags=display="MicroSD";storage;wipeingui;removable
+/usb-otg        auto    /dev/block/sda1         /dev/block/sda                      flags=display="USB-OTG";storage;wipeingui;removable

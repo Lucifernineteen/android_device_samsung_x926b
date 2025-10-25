@@ -18,4 +18,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.device=x926b \
     ro.product.model=SM-X926B \
     ro.product.brand=samsung \
-    ro.product.manufacturer=samsung
+    ro.product.manufacturer=samsung \

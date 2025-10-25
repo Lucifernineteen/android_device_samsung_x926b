@@ -9,7 +9,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_x926b.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_x926b-eng \
-    twrp_x926b-userdebug \
-    twrp_x926b-user
-    
+    twrp_x926b-trunk_staging-eng \
+    twrp_x926b-trunk_staging-userdebug \
+    twrp_x926b-trunk_staging-user
